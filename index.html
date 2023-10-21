@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #222;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .parent {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .box_introduction, .box {
+            width: 100%;
+            margin: 10px;
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+        .box_introduction {
+            background: #262626;
+        }
+        .box {
+            background: #262626;
+        }
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        .box a {
+            font-size: 18px;
+        }
+        .box_introduction p {
+            text-align: center;
+            text-transform: uppercase;
+            margin-top: 20px;
+        }
+        .box::after, .box::before, .box_introduction::after, .box_introduction::before {
+            content: "";
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, #0000ff, #00ff00, #ffff00, #ff0000);
+            position: absolute;
+            background-size: 400%;
+            z-index: -1;
+            top: -2px;
+            left: -2px;
+            animation: animated-shadow 10s linear infinite alternate;
+        }
+        .box_introduction::after {
+            filter: blur(30px);
+        }
+        a:hover{
+            background-color: #ffffff;
+            color: #fb0094;
+            transition: all 0.4s;
+        }
+        @keyframes animated-shadow {
+            0% {
+                background-position: 0 0;
+            }
+            50% {
+                background-position: 100% 0;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .box{
+                width: 48%;
+            }
+            .box_introduction p {
+                font-size: 24px;
+            }
+            .box a {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="box_introduction">
+            <p>
+                I am Ali Raza Smit batch 10 student. <br> 
+                <span>Roll number 137174</span>
+                <br>
+                   </p>
+        </div>
+        <div class="box_introduction">
+            <p>quiz app Assignment</p>
+        </div>
+        <div class="box">
+            quiz app 1
+            <a href="https://alirazaramejo.github.io/quiz-app-1/" target="_blank">Click Here</a>
+        </div>
+        <div class="box">
+            quiz app 2
+            <a href="https://alirazaramejo.github.io/quiz-app2/" target="_blank">Click Here</a>
+        </div>
+        <div class="box">
+            quiz app 3
+            <a href="https://alirazaramejo.github.io/quiz-app/" target="_blank">Click Here</a>
+        </div>
+    </div>
+</body>
+</html>
